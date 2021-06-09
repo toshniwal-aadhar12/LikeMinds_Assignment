@@ -89,7 +89,7 @@ def addToCart():
     except Exception:
         print("There was an error adding the item to the cart.")
 
-
+#updates an existing item in the cart.
 def updateCart():
     username = input("Enter username:")
     category = input("Enter the name of category.")
@@ -108,7 +108,7 @@ def updateCart():
         else:
             print("Either username does not exist or item does not exist in cart.")
 
-
+#removes an element from the cart
 def removeFromCart():
     username = input("Enter username:")
     category = input("Enter the name of category.")
@@ -120,7 +120,7 @@ def removeFromCart():
             print(cart)
             return
     
-
+#get all the items in a cart of a user.
 def getCart():
     username = input("Enter username:")
     isUserExist = isUser(username)
@@ -131,6 +131,7 @@ def getCart():
             if i[0]==username:
                 print(i)
 
+#checks out a user, calculates the bill and updates the wallet.
 def cartCheckout():
     bill = 0
     price = 0
@@ -161,14 +162,15 @@ def cartCheckout():
             print("checkout successfull.")
             return
 
-
+#get the wallet amount of a user.
 def getWallet():
     username = input("Username:")
     for i in user:
         if i[0] == username:
             print("Current wallet balance: ", i[1])
             return
-    
+        
+#update the wallet amount.
 def updateWallet():
     username = input("Username:")
     amount = input("Enter the amount to be added.")
@@ -178,10 +180,14 @@ def updateWallet():
             return
         print("User does not exist.")
 
+#get all the items in the inventory.
 def getItemsInventory():
     for i in inventory:
         print(i)
 
+        
+        
+#Driver Code........
 dict1 = {
     "1": addItem,
     "2": addItemToInventory,
